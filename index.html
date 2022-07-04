@@ -44,13 +44,46 @@ Para mí, al igual que para muchas más personas, la familia es prioridad al mom
 
 
 <center><h2>Proceso a seguir </h2></center>
-<p> Los tipos de datos encontrados nos indican que debemos representar estadísticas de que tipo de delitos son los más comunes,  ¿que sector de la población puede ser más propenso a cometer crímenes y de que naturaleza?. ¿Cuál es la ubicación geográfica de dichos crímenes para ver la concentración y zonas neurálgicas?. Por esto creo que una representación de los gráficos usando cuadros de mando específicos para 3 temas importantes (seguridad, distribución de crímenes, demográficos) es la forma adecuada de transmitir la información a la audiencia. Es muy importante que el conjunto de datos a utilizar no perjudique la visualización por falta de calidad de los datos, para esto necesitamos tener un dataset libre de errores, manejo de valoues nulos, normalizado y estandarizado de variables, para ello nos apoyaremos en el proceso KDD previamente avanzado en Minería de Datos y en las posibilidades de visualizacion ofrecidas por Python.</p>
+<p> Los tipos de datos encontrados nos indican que debemos representar estadísticas de que tipo de delitos son los más comunes,  ¿que sector de la población puede ser más propenso a cometer crímenes y de que naturaleza?. ¿Cuál es la ubicación geográfica de dichos crímenes para ver la concentración y zonas neurálgicas?. Por esto creo que una representación de los gráficos usando cuadros de mando específicos para 3 ópticas importantes (sospechosos, víctimas y aspectos geográficos) es la forma adecuada de transmitir la información a la audiencia. Es muy importante que el conjunto de datos a utilizar no perjudique la visualización por falta de calidad de los datos, para esto necesitamos tener un dataset libre de errores, manejo de valores nulos, normalizado y estandarizado de variables, para ello nos apoyaremos en el proceso KDD previamente avanzado en Minería de Datos y en las posibilidades de visualizacion ofrecidas por Python.</p>
 
+<p>A pesar de que la representación gráfica usando Python es muy poderosa, en nuestro caso nos sirve para realizar gráficas que muestren aspectos puntuales del estudio que estamos realizando sin embargo, para una conexión más interactiva con nuestro público hemos utilizado PowerBi por su capacidad de realizar visualizaciones con las cúales se puede interactuar más dinámicamente y "descubrir" información relevante para cada quién en particular, combinando las posibilidades de mostrar la información en los 3 cuadros de mando señalados previamente.</p>
+<p>En estos cuadros de mando lo que se busca es plasmar la posibilidad de que las personas puedan utilizarlos para ver las cifras relacionadas con los delitos y tipos de crímenes ocurridos en Nueva York en 2021 y que también puedan "observar" y tomar decisiones con la información proporcionada.</p> 
+ 
+<p><b>1er Cuadro de Mando</b>: CUADRO DE MANDO DE SOSPECHOSOS DE DELITOS EN NUEVA YORK EN 2021</p>
+  <p>En este cuadro de mando presentamos gráficos que nos muestras estadísticas de los crímenes más frecuentes por edades y distritos policíacos así como el sexo y la raza de los sospechosos de dichos crímenes, siendo mostrada esta información a lo largo de los meses del año 2021.</p>
+
+  <p><b>2do Cuadro de Mando</b>: MAPAS DE DELITOS EN NUEVA YORK DURANTE 2021</p>
+    <p>Con estos mapas podemos tener la facilidad de visualizar la ubicación geográfica exacta de los lugares y áreas donde ocurrieron los diferentes tipos de crímenes. Aprovechamos la ventaja de tener valores de Latitud y Longitud que nos proporcionan la ubicación inequívoca y exacta en lugar de utilizar la localización por nombre de lugar o ciudad que puede traer confusiones si dos sitios en diferentes partes del mundo se llaman igual.</p>
+
+<p><b>3er Cuadro de Mando</b>: CUADRO DE MANDO DE VICTIMAS DE DELITOS EN NUEVA YORK EN 2021</p>
+<p>En este cuadro de mando cuál es el número total de casos registrados en este período en estudio y cuáles son los totales de cada clasificación de delitos segun su gravedad. Asi como también se muestra la distribución de los delitos por edades y raza de las víctimas y con que frecuencia estos delitos se cometen en los diferentes distritos policíacos de la ciudad de Nueva York. 
+  <p>
 <center><h2>Justificaciones </h2></center>
 <p> Herramientas</p>
+
+<p>Google Colab: esta herramienta nos ha permitido realizar un análisis y un proceso inicial de ETL (Extracción, Transformación y Carga) para realizar una limpieza y depuración de los datos y tener continuidad con la realización de gráficos con dichos datos, utilizando la versalitidad de Python y sus librerías Seaborn y Pandas</p>
+<p>EXCEL: esta Hoja de Cálculo la usamos para visualizar el archivo NYPD_FINAL.csv que hemos exportado del cuaderno de Google Colab una vez que realizamos el proceso de limpieza y transformación de datos.</p>
+<p>PowerBi: hemos querido aprovechar las ventajas de visualización dinámica que ofrece PowerBi para crear un conjunto de gráficos interactivos que ofrecerán la posibilidad de brindar la información a los usuarios de una manera efectiva.</p>
+<p>Stackblitz: es una herramienta que nos brinda una gran facilidad de presentar nuestros gráficos en una página web utilizando el lenguaje html.</p>
+
 <p> Tipos de Gráficos</p>
 
+<p><b>Gráficos de Barras</b>: gráficos que me permitieron vizualizar relaciones entre variables categóricas como las edades y el número de casos relacionados a cada intervalo de edad. Son muy útiles para establecer comparaciones entre variables categóricas</p>
 
+<p><b>Gráficos de Barras</b>: los gráficos de líneas nos permiten visualizar los cambios a lo largo de un rango continuo, en este caso el tiempo. Estos gráficos nos permiten visualizar cambios o tendencias generales y se pueden comparar simultáneamente varias tendencias.</p>
+
+<p><b>Gráficos de Pastel o Torta</b>: nos permmiten mostrar divisiones en sectores y cada uno de ellos con una magnitud o frecuencia relativa que es proporcional al valor que se esta representando. Es muy útil para representar un aspecto categorizado, los distritos de Nueva York por ejemplo, y los valores asociados a cada una de las categorías presentes.</p>
+
+<p><b>Gráficos de Cintas</b>: se pueden usar gráficos de cinta para visualizar y detectar rápidamente qué categoría de datos tiene la clasificación más alta (el valor mayor). Los gráficos de cinta de opciones son eficaces para mostrar un cambio de clasificación, con el intervalo más alto (valor) siempre en la parte superior de cada período de tiempo como en nuestro caso que lo hemos utilizado para representar la evolucion temporal de los delitos en los diferentes distritos policíacos.</p>
+
+<p><b>Gráficos de <i>Treemap</i></b>: los treemaps se utilizan para mostrar grandes cantidades de datos que se pueden estructurar de forma jerárquica (con estructura de árbol). De esta forma, se muestran los datos mediante rectángulos de diferentes tamaños y colores. Los datos de los treemaps se organizan de forma jerárquica y son muy efectivos para mostrar datos como los Delitos distribuídos por Razas de nuestro cuadro de mando.</p>
+
+<p><b>Mapas</b>: son representaciones que nos permiten vizualizar atributos o categorías asociadas a una distribución o localización geográfica. Los hemos utilizado ya que poseemos datos de Latitud y Longitud que como hemos comentado previamente nos permiten la ubicación exacta de cada uno de los delitos registrados en las diferentes áreas de Nueva York. A estos mapas podemos asociarle atributos adicionales a la localización como datos estadísticos o cantidades para complementar de gran manera y que sean muy útiles para mostrar como estan distribuidos geográficamente los diferentes delitos cometidos.<p>   
+
+
+<center><h2>Conclusiones </h2></center>
+
+<center><h2>Referencias </h2></center>
 
 
 
